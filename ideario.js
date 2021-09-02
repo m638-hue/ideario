@@ -220,7 +220,9 @@ function createText(title, t, d, id, hidden){
     let counter = document.createElement("div")
     counter.classList.add("wordCount");
     if(hidden) counter.classList.add("hidden");
-    counter.innerText = t.split(" ").length + " palabras";
+    num = t.split(" ").length
+    w = (num == 1) ? " word" : " words";
+    counter.innerText = num + w;
 
     let text = document.createElement("div");
     text.classList.add("text");
@@ -292,7 +294,7 @@ function addText(e){
     this.classList.add("fadeButton");
 
     let textsContainer = this.parentElement.parentElement.querySelector(".textsContainer");
-    let container = createText("Ponle título :)", "//Aunque probablemente quieras escribir primero", moment(), getLastId(), false);
+    let container = createText("Add a title :)", "//Write your thoughts", moment(), getLastId(), false);
     let firstText = textsContainer.querySelector(".text")
     
     firstText = (firstText == null) ? undefined : firstText.parentElement;
@@ -840,7 +842,8 @@ function wordCount(e){
     let counter = this.parentElement.querySelector(".wordCount");
     let path = this.parentElement.parentElement.parentElement.parentElement.children[0].dataset.path;
 
-    counter.innerText = words.length + " palabras";
+    w = (words.length == 1) ? "word" : "words";
+    counter.innerText = words.length + " words";
     
     if(!isTextInLS(this.parentElement.dataset.id, path)) addTextToLS(this.parentElement);
     else if(e.data == " " || e.data == "." || e.data == "?" || e.inputType == "insertByPaste" || e.inputType == "formatBold" || e.inputType == "formatItalic" || e.inputType == "formatUnderline") {
