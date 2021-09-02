@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideario</title>
+    <link href="fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.css" rel = "stylesheet">
+    <link href="style.css" rel = "stylesheet">    
+</head>
+<body onload="start()">
+    <div class="header" data-folderId = 0 data-path = "0"><span class="headerTitle" onclick="openWithoutClick(this.dataset.path)" data-path="0">Ideario</span></div>
+    <div class="mainContainer">
+
+        <div class="pathContainer">
+            <div class="path">
+            </div>
+        </div>
+
+        <div class="buttonContainer">
+            <div class="addText" onclick="addText"><i class="fas fa-envelope-open-text"></i></i></div>
+            <div class="addFolder" onclick="addFolder"><i class="far fa-folder"></i></div>
+        </div>
+
+        <div class="textsContainer">
+            
+        </div>  
+
+    </div>
+    
+    <script src="https://kit.fontawesome.com/0999e96faa.js" crossorigin="anonymous"></script>
+    <script src="moment.js"></script>
+    <script src="ideario.js"></script>
+</body>
+</html>

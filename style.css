@@ -1,0 +1,331 @@
+@font-face{
+    font-family: Comforta;
+    src: url("Comfortaa/Comfortaa-VariableFont_wght.ttf");
+}
+
+::selection{
+    background-color: #da4a4a;
+    color: #f7e4e4;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Comforta!important;
+    background-color: #f7e4e4;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.header{
+    padding: 2%;
+    font-size: 3rem;
+    background-color: #E0A2A2;
+    font-weight: bold;
+    color: #260000;
+    text-align: center;
+    user-select: none;
+}
+
+.headerTitle{
+    cursor: pointer;
+}
+
+.mainContainer{
+    margin: 0%;
+    padding: 0%;
+    height: fit-content;
+}
+
+.textsContainer{
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+.textTitle{
+    margin-top: 0;
+    margin-bottom: 4%;
+    width: 90%;
+    float: left;
+}
+
+.date, .wordCount{
+    color: #8b8b8b;
+    margin-bottom: 2%;
+    clear: both;
+    user-select: none;
+}
+
+.wordCount{
+    margin-top: 2%;
+    margin-bottom: 0%;
+}
+
+.indivTextContainer{
+    width: 25%;
+    min-width: 300px;
+    padding: 2%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 2%;
+    transition: all .5s;
+    position: relative;
+}
+
+.hidden{
+    opacity: -100;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    animation: none;
+    transform: translateY(-80%);
+}
+
+.cog{
+    width: 10%;
+    height: 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #8b8b8b;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+    position: relative;    
+    user-select: none;
+    opacity: 0;
+    user-select: none;
+    cursor: pointer;
+}
+
+.optionContainer{
+    color: #8b8b8b;
+    border-radius: 10px;
+    user-select: none;
+    opacity: 1;
+    display: none;
+    position: absolute;
+    width: fit-content;   
+    top: 0;
+    left: 200%;
+}
+ 
+.fadeInLeft {
+    animation-name: fadeInLeft;
+} 
+
+.fadeOutLeft{
+    animation-name: fadeOutLeft;
+}
+
+.option{
+    padding: 5% 10%;
+    background-color: white;
+    font-size: 1rem;
+    user-select: none;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 7%;
+    border-radius: 10px;   
+    box-shadow: 5px 5px 2px 2px #0000002e;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+[contenteditable = true]:focus{
+    border: none;
+    outline: none;
+}
+
+.focused{
+    border:none;
+    outline: none;
+    box-shadow: 5px 5px 2px 2px #0000002e;
+    transform: translate(-5px, -5px);
+    transition: .5s;
+}
+
+.addText, .addFolder{
+    width: fit-content;
+    margin: auto;
+    margin-top: 3%;
+    padding: 2%;
+    background-color: white;
+    border-radius: 100%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: none;
+    transition: .5s;
+    user-select: none;
+    cursor: pointer;
+}
+
+.addText:hover, .addFolder:hover{   
+    box-shadow: 2px 2px 2px 2px #0000002e;
+    transform: translate(-5px, -5px);
+    transition: .5s;    
+}
+
+.fadeButton{
+    opacity: 0;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 0;
+}
+
+.deleteText{
+    animation-name: deleteText;
+}
+
+.folder{
+    background-color: white;
+}
+
+.textInFolderContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.folderColumn{
+    width: 46.5%;
+}
+
+.textInFolder{
+    display: block;
+    background-color: #f2f2f2;
+    width: 86%;
+    padding: 7%;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 10%;
+}
+
+.textInFolder .textTitle{
+    width: 100%;
+}
+
+.textInfolder .date, .textInFolder .wordCount{
+    margin: 0!important;
+    margin-bottom: 0!important;
+}
+
+.addTextInFolder{
+    text-align: center;
+    color: #8b8b8b;
+    margin-bottom: 0;
+    user-select: none;
+}
+
+.folderTitle{
+    font-size: 1.3rem;
+    height: fit-content;
+    margin: 0;
+    animation: fadeInLeft .7s;
+}
+
+.pathContainer{
+    overflow-y: hidden;
+}
+
+.path{
+    padding: 1%;
+    background-color: #f5f3f4;
+    transition: .5s;
+    transform: translateY(-100px);
+    color: #6d2e46;
+    user-select: none;
+}
+
+.pathLink{
+    margin: 0;;
+    display: inline;
+    text-decoration: underline;
+    user-select: none;
+    cursor: pointer;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutLeft{
+    0% {
+       opacity: 1;
+    }
+    100% {
+       opacity: 0;
+       transform: translateY(100px);
+    } 
+}
+
+@keyframes deleteText{
+    0% {
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+        height: fit-content;
+        padding: 2%;
+        margin: auto;
+        margin-top: 2%;
+    }
+
+    100% {
+        transition: .5s ease;
+        opacity: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        transform: translate(95px, -5px);
+    }
+}
+
+@keyframes hideText{
+    0% {
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+        height: fit-content;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        transform: translateY(-80%);
+    }
+}
+
+@keyframes fadeOut{
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
