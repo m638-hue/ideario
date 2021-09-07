@@ -337,7 +337,7 @@ function addFolder(e){
 
     let folder = getFolder(this.parentElement.parentElement.parentElement.children[0].dataset.path);
     let textsContainer = this.parentElement.parentElement.querySelector(".textsContainer");
-    let container = createFolder(moment(), "Escribe el nombre del folder", getLastFolderId(folder), false, [], []);
+    let container = createFolder(moment(), "Write the folder's name", getLastFolderId(folder), false, [], []);
 
     textsContainer.insertBefore(container, textsContainer.children[0]);
     window.getSelection().selectAllChildren(container.children[0]);
@@ -458,7 +458,7 @@ function addTextsToFolder(col1, col2, texts, folders){
     }
 
     let f = document.createElement("h2");
-    f.innerText = "Agregar texto"
+    f.innerText = "Add text"
     f.classList.add("folderTitle");
     
     let addButton = document.createElement("div");
